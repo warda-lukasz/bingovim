@@ -39,6 +39,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile"},{
 	end
 })
 
+-- vim.filetype.add()
+
 -- Return to last edit position when opening files
 vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",
@@ -57,4 +59,6 @@ require('lua.plugins.options.aerial')
 require('lua.plugins.options.copilotChat')
 require('lua.plugins.options.nvimtree')
 require('lua.plugins.options.treesitter')
-require('lub.plugins.options.emoji')
+require('lua.plugins.options.emoji')
+require('lua.plugins.options.lsp')
+require('lua.plugins.options.nvim-cmp')
