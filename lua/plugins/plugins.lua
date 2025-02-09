@@ -1,107 +1,107 @@
 return {
-	-- File tree
-	{
-		"nvim-tree/nvim-tree.lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	-- Telescope (file finder)
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	-- Treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = { 
-					"typescript",
-					"twig",
-					"html", 
-					"javascript", 
-					"css", 
-					"json", 
-					"bash",
-					"cmake",
-					"csv",
-					"php",
-					"phpdoc",
-					"lua",
-					"python",
-				},
-				highlight = { 
-					enable = true,  
-					additional_vim_regex_gighlighting = false,
-					disable = {},
-				},
-				indent = { enable = true },
-			})
-		end,
-	},
-	-- Which Key
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {},
-	},
-	-- BarBar
-	{
-		"romgrk/barbar.nvim",
-		dependencies = {
-			"lewis6991/gitsigns.nvim",
-			"nvim-tree/nvim-web-devicons"
-		},
-		init = function() vim.g.barbar_auto_setup = false end,
-		opts = {}
-	},
-	 --Copilot
-	{
-		"github/copilot.vim",
-		config = function() 
-			vim.g.copilot_node_command = "~/.nvm/versions/node/v18.20.6/bin/node"
-		end,
-	},
-	-- CopilotChat
-	{
-	    "CopilotC-Nvim/CopilotChat.nvim",
-	    dependencies = {
-		{ "github/copilot.vim" },
-		{ "nvim-lua/plenary.nvim" },
-	    },
-	    build = "make tiktoken",
-      opts = {
-        
-      },
-	},
-	-- Auto-save
-	{
-		"pocco81/auto-save.nvim",
-		config = function() 
-			require("auto-save").setup({
-				enabled = true,
-				trigger_events = {
-					"InsertLeave",
-					"TextChanged",
-					"FocusLost",
-				},
-				execution_message = {
-					message = function()
-						return ""
-					end,
-				},
-				write_all_buffers = true,
-			})
-		end,
-	},
-	-- Comment code
+  -- File tree
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  -- Telescope (file finder)
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = {
+          "typescript",
+          "twig",
+          "html",
+          "javascript",
+          "css",
+          "json",
+          "bash",
+          "cmake",
+          "csv",
+          "php",
+          "phpdoc",
+          "lua",
+          "python",
+        },
+        highlight = {
+          enable = true,
+          additional_vim_regex_gighlighting = false,
+          disable = {},
+        },
+        indent = { enable = true },
+      })
+    end,
+  },
+  -- Which Key
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  -- BarBar
+  {
+    "romgrk/barbar.nvim",
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "nvim-tree/nvim-web-devicons"
+    },
+    init = function() vim.g.barbar_auto_setup = false end,
+    opts = {}
+  },
+  --Copilot
+  {
+    "github/copilot.vim",
+    config = function()
+      vim.g.copilot_node_command = "~/.nvm/versions/node/v18.20.6/bin/node"
+    end,
+  },
+  -- CopilotChat
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "github/copilot.vim" },
+      { "nvim-lua/plenary.nvim" },
+    },
+    build = "make tiktoken",
+    opts = {
+
+    },
+  },
+  -- Auto-save
+  {
+    "pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup({
+        enabled = true,
+        trigger_events = {
+          "InsertLeave",
+          "TextChanged",
+          "FocusLost",
+        },
+        execution_message = {
+          message = function()
+            return ""
+          end,
+        },
+        write_all_buffers = true,
+      })
+    end,
+  },
+  -- Comment code
   {
     'terrortylor/nvim-comment',
     config = function()
       require("nvim_comment").setup({ create_mappings = false })
     end
   },
-	-- Preview markdown live in web browser
+  -- Preview markdown live in web browser
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle" },
@@ -110,17 +110,17 @@ return {
   },
   -- Render markdown
   {
-      'MeanderingProgrammer/render-markdown.nvim',
-      dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
-      opts = {},
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    opts = {},
   },
   -- Indent blankline
   {
-      "lukas-reineke/indent-blankline.nvim",
-      main = "ibl",
-      ---@module "ibl"
-      ---@type ibl.config
-      opts = {},
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
   },
   -- Gitsigns
   {
@@ -160,15 +160,15 @@ return {
     opts = {},
     -- Optional dependencies
     dependencies = {
-       "nvim-treesitter/nvim-treesitter",
-       "nvim-tree/nvim-web-devicons"
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
     },
   },
   -- Zoomer programming
   {
     "allaman/emoji.nvim",
     version = "1.0.0", -- optionally pin to a tag
-    ft = "markdown", -- adjust to your needs
+    ft = "markdown",   -- adjust to your needs
     dependencies = {
       -- util for handling paths
       "nvim-lua/plenary.nvim",
@@ -180,4 +180,9 @@ return {
       "ibhagwan/fzf-lua",
     },
   },
+  -- SchemaStore
+  {
+    "b0o/SchemaStore.nvim",
+    lazy = true
+  }
 }
