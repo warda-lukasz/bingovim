@@ -3,7 +3,7 @@ map = vim.keymap.set
 require("plugins_keymaps")
 
 -- save&quit
-map("n", "<leader>qq", "<cmd>wqa<CR>", { noremap = true, silent = true, desc = "Save&Quit" })
+map("n", "<leader>wq", "<cmd>wqa<CR>", { noremap = true, silent = true, desc = "Save&Quit" })
 map("n", "<leader>q", "<cmd>q<CR>", { noremap = true, silent = true, desc = "Quit" })
 map("n", "<leader>s", "<cmd>w<CR>", { noremap = true, silent = true, desc = "Save" })
 

@@ -29,8 +29,9 @@ map('n', '<leader>xx', '<Cmd>BufferCloseAllButPinned<CR>', { noremap = true, sil
 -- copilotchat
 map("n", "<S-c>", "<cmd>CopilotChatToggle<CR>", { noremap = true, silent = true, desc = "Open Copilot Chat" })
 map("n", "<S-m>", "<cmd>CopilotChatModels<CR>", { noremap = true, silent = true, desc = "Select Copilot Model" })
+map("n", "<S-x>", "<cmd>CopilotChatReset<CR>", { noremap = true, silent = true, desc = "Reset Copilot Chat" })
 
---lsp
+--lsC
 map('n', 'gd', vim.lsp.buf.definition, { desc = "Go to Definition" })
 map('n', 'gr', vim.lsp.buf.references, { desc = "Go to References" })
 map('n', 'K', vim.lsp.buf.hover, { desc = "Hover Documentation" })

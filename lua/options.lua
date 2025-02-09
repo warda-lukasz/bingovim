@@ -6,6 +6,7 @@ vim.g.loaded_netrw = 1
 
 -- Show line numbers
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Set tab options
 vim.opt.tabstop = 4
