@@ -15,6 +15,7 @@ require('aerial').setup({
     "Constant",
     "Component", -- For React components
   },
+
   -- Add language-specific settings
   typescript = {
     -- Helps with TSX files

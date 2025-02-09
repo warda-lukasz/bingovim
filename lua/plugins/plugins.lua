@@ -189,4 +189,9 @@ return {
       require("colorizer").setup()
     end,
   },
+  -- Conform
+  {
+    "stevearc/conform.nvim",
+    opts = {},
+  }
 }

@@ -1,19 +1,19 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "phpactor",              -- PHP
-    "cssls",                 -- CSS
-    "html",                  -- HTML
-    "eslint",                -- JavaScript, TypeScript linting
-    "jsonls",                -- JSON
-    "emmet_ls",              -- Emmet for HTML/CSS
-    "yamlls",                -- YAML
-    "bashls",                -- Bash
-    "dockerls",              -- Docker
-    "angularls",             -- Angular
-    "lua_ls",                -- Lua
-    "twiggy_language_server",-- Twig
-    "ts_ls",                 -- TypeScript
+    "phpactor",               -- PHP
+    "cssls",                  -- CSS
+    "html",                   -- HTML
+    "eslint",                 -- JavaScript, TypeScript linting
+    "jsonls",                 -- JSON
+    "emmet_ls",               -- Emmet for HTML/CSS
+    "yamlls",                 -- YAML
+    "bashls",                 -- Bash
+    "dockerls",               -- Docker
+    "angularls",              -- Angular
+    "lua_ls",                 -- Lua
+    "twiggy_language_server", -- Twig
+    "ts_ls",                  -- TypeScript
     -- "eslint",                -- TypeScript
   },
   automatic_installation = true,

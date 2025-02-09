@@ -7,4 +7,10 @@ map('n', '[d', vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
 map('n', ']d', vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
 map('n', '<A-CR>', vim.lsp.buf.code_action, { desc = "Code Action" })
 map('n', '<leader>rn', vim.lsp.buf.rename, { desc = "Rename" })
-map('n', '<leader>l', vim.lsp.buf.format, { desc = "Format Code" })
+map({ "n", "v" }, "<leader>l", function()
+    require("conform").format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 3000,
+    })
+end, { desc = "Format file or range" })
