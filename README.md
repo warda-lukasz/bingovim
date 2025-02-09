@@ -1,6 +1,6 @@
 # Bingovim!
 
-This is my configuration for neovim. It is a work in progress (as always) and I am constantly tweaking it (as always also).
+This is my configuration for neovim. It is a work in progress (as it always is) and I am constantly tweaking it (as always as it is also).
 It uses Lazy package manager, which I heard is what the cool kids are using.
 
 ## Installation
