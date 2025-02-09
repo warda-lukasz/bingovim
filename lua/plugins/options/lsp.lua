@@ -12,7 +12,9 @@ require("mason-lspconfig").setup({
     "dockerls",              -- Docker
     "angularls",             -- Angular
     "lua_ls",                -- Lua
-    "twiggy_language_server" -- Twig
+    "twiggy_language_server",-- Twig
+    "ts_ls",                 -- TypeScript
+    -- "eslint",                -- TypeScript
   },
   automatic_installation = true,
 })
@@ -27,3 +29,5 @@ require("plugins.options.lsp.html")
 require("plugins.options.lsp.cssls")
 require("plugins.options.lsp.bashls")
 require("plugins.options.lsp.twiggy_language_server")
+require("plugins.options.lsp.ts_ls")
+-- require("plugins.options.lsp.eslint")
