@@ -9,8 +9,6 @@ if not vim.loop.fs_stat(lazypath) then
 	local success, result = pcall(vim.fn.system, sysargs)
 end
 
-
-
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 -- Load plugins
