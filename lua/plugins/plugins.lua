@@ -184,5 +184,12 @@ return {
   {
     "b0o/SchemaStore.nvim",
     lazy = true
-  }
+  },
+  -- Colorizer
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end,
+  },
 }
