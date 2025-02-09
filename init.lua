@@ -14,11 +14,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 -- Load plugins
+
 require("plugins.lsp")
 require("plugins.styles")
 -- Load keybindings
 require("keymaps")
-require("plugins.plugins")
 
 -- Load options
 require("options")

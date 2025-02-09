@@ -1,6 +1,6 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
-local mappings = require('lua.plugins.keymaps.nvim-cmp')
+local mappings = require('plugins.keymaps.nvim-cmp')
 
 cmp.setup({
   snippet = {

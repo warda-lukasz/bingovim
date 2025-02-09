@@ -55,10 +55,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.cmd('colorscheme catppuccin-macchiato')
 
 -- Load Plugins Options
-require('lua.plugins.options.aerial')
-require('lua.plugins.options.copilotChat')
-require('lua.plugins.options.nvimtree')
-require('lua.plugins.options.treesitter')
-require('lua.plugins.options.emoji')
-require('lua.plugins.options.lsp')
-require('lua.plugins.options.nvim-cmp')
+require('plugins.options.aerial')
+require('plugins.options.copilotChat')
+require('plugins.options.nvimtree')
+require('plugins.options.treesitter')
+require('plugins.options.emoji')
+-- require('lua.plugins.options.lsp')
+require('plugins.options.nvim-cmp')
