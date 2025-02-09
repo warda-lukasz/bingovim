@@ -16,4 +16,4 @@ git clone https://github.com/warda-lukasz/bingovim.git ~/.config/nvim
 2. Open neovim .
 
 3. Done!  🏅🔥🎉
-<small>(and in case it is not, then `:Lazy sync` to install all plugins)<small>`
+<sub>(and in case it is not, then `:Lazy sync` to install all plugins)<sub>
