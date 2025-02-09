@@ -49,5 +49,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
 }) 
 
+vim.cmd('colorscheme catppuccin-macchiato')
+
 -- Load Plugins Options
 require('plugins_options')
