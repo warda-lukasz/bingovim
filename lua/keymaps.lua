@@ -1,6 +1,4 @@
-map = vim.keymap.set
--- plugins
-require("plugins_keymaps")
+local map = vim.keymap.set
 
 -- save&quit
 map("n", "<leader>wq", "<cmd>wqa<CR>", { noremap = true, silent = true, desc = "Save&Quit" })
@@ -25,3 +23,16 @@ map("n", "<leader>hs", "<cmd>split<CR>", { noremap = true, silent = true, desc =
 
 -- yank to clipboard
 map({"n", "v"}, "<leader>y", [["+y]])
+
+-- load plugins
+require('lua.plugins.keymaps.aerial')
+require('lua.plugins.keymaps.barbar')
+require('lua.plugins.keymaps.copilot')
+require('lua.plugins.keymaps.copilotChat')
+require('lua.plugins.keymaps.lazygit')
+require('lua.plugins.keymaps.lsp')
+require('lua.plugins.keymaps.markdownPreview')
+require('lua.plugins.keymaps.nvim-comment')
+require('lua.plugins.keymaps.nvimtree')
+require('lua.plugins.keymaps.telescope')
+require('lua.plugins.keymaps.whichkey')

@@ -6,7 +6,7 @@ vim.g.loaded_netrw = 1
 
 -- Show line numbers
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- Set tab options
 vim.opt.tabstop = 4
@@ -49,7 +49,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
 }) 
 
+-- Set colorscheme
 vim.cmd('colorscheme catppuccin-macchiato')
 
 -- Load Plugins Options
-require('plugins_options')
+require('lua.plugins.options.aerial')
+require('lua.plugins.options.copilotChat')
+require('lua.plugins.options.nvimtree')
+require('lua.plugins.options.treesitter')
