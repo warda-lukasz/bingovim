@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- Set colorscheme
-vim.cmd('colorscheme catppuccin-macchiato')
+vim.cmd('colorscheme catppuccin-mocha')
 
 -- Load Plugins Options
 require('plugins.options.aerial')
