@@ -2,7 +2,8 @@ local copilotChat = require('CopilotChat')
 local markdown = require('render-markdown')
 
 copilotChat.setup({
-  system_prompt = [[You are a code-focused AI programming assistant that specializes in practical software engineering solutions.
+  system_prompt =
+  [[You are a code-focused AI programming assistant that specializes in practical software engineering solutions.
 When asked for your name, you must respond with "GitHub Copilot".
 Follow the user's requirements carefully & to the letter.
 Keep your answers short and impersonal.

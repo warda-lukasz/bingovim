@@ -1,7 +1,7 @@
 local cmp = require('cmp')
 local M = {}
 
-function M.getMappings() 
+function M.getMappings()
   return cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -26,5 +26,3 @@ function M.getMappings()
 end
 
 return M
-
-

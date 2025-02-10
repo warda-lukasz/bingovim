@@ -18,13 +18,14 @@ map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', { noremap = true, silent = true, desc
 map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', { noremap = true, silent = true, desc = "Go to Buffer 7" })
 map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', { noremap = true, silent = true, desc = "Go to Buffer 8" })
 map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', { noremap = true, silent = true, desc = "Go to Buffer 9" })
-map('n', '<A-0>', '<Cmd>BufferLast<CR>',  { noremap = true, silent = true, desc = "Go to Last Buffer" })
+map('n', '<A-0>', '<Cmd>BufferLast<CR>', { noremap = true, silent = true, desc = "Go to Last Buffer" })
 
 -- Pin/unpin buffer
 map('n', '<A-p>', '<Cmd>BufferPin<CR>', { noremap = true, silent = true, desc = "Pin Buffer" })
 
 -- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', { noremap = true, silent = true, desc = "Close Buffer" })
-map('n', '<leader>x', '<Cmd>BufferCloseAllButCurrent<CR>', { noremap = true, silent = true, desc = "Close All But Current Buffer" })
-map('n', '<leader>xx', '<Cmd>BufferCloseAllButPinned<CR>', { noremap = true, silent = true, desc = "Close All But Pinned Buffers" })
-
+map('n', '<leader>x', '<Cmd>BufferCloseAllButCurrent<CR>',
+  { noremap = true, silent = true, desc = "Close All But Current Buffer" })
+map('n', '<leader>xx', '<Cmd>BufferCloseAllButPinned<CR>',
+  { noremap = true, silent = true, desc = "Close All But Pinned Buffers" })

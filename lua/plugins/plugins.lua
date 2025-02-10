@@ -207,7 +207,7 @@ return {
       require("dbee").install()
     end,
     config = function()
-      require("dbee").setup(--[[optional config]])
+      require("dbee").setup( --[[optional config]])
     end,
   },
   -- Todo comments

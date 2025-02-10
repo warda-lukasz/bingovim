@@ -17,20 +17,20 @@ local gitsigns = require('gitsigns')
 -- map('n', '<leader>hb', function() gitsigns.blame_line({ full = true })
 -- end)
 --
-map('n', '<leader>ghd', gitsigns.diffthis, { noremap = true , silent = true , desc = 'Diff this file' })
+map('n', '<leader>ghd', gitsigns.diffthis, { noremap = true, silent = true, desc = 'Diff this file' })
 --
 map('n', '<leader>ghD', function()
   gitsigns.diffthis('~')
-end, { noremap = true , silent = true , desc = 'Diff this file against HEAD' })
+end, { noremap = true, silent = true, desc = 'Diff this file against HEAD' })
 --
 -- map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
 -- map('n', '<leader>hq', gitsigns.setqflist)
 
 -- Toggles
-map('n', '<leader>gtb', gitsigns.toggle_current_line_blame, { noremap = true , silent = true , desc = 'Toggle current line blame' })
-map('n', '<leader>gtd', gitsigns.toggle_deleted, { noremap = true , silent = true , desc = 'Toggle deleted' })
-map('n', '<leader>gtw', gitsigns.toggle_word_diff, { noremap = true , silent = true , desc = 'Toggle word diff' })
+map('n', '<leader>gtb', gitsigns.toggle_current_line_blame,
+  { noremap = true, silent = true, desc = 'Toggle current line blame' })
+map('n', '<leader>gtd', gitsigns.toggle_deleted, { noremap = true, silent = true, desc = 'Toggle deleted' })
+map('n', '<leader>gtw', gitsigns.toggle_word_diff, { noremap = true, silent = true, desc = 'Toggle word diff' })
 
 -- -- Text object
 -- map({'o', 'x'}, 'ih', gitsigns.select_hunk)
-

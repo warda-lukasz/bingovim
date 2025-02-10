@@ -22,7 +22,7 @@ map("n", "<leader>vs", "<cmd>vsplit<CR>", { noremap = true, silent = true, desc 
 map("n", "<leader>hs", "<cmd>split<CR>", { noremap = true, silent = true, desc = "Horizontal Split" })
 
 -- yank to clipboard
-map({"n", "v"}, "<leader>y", [["+y]])
+map({ "n", "v" }, "<leader>y", [["+y]])
 
 -- load plugins
 require('plugins.keymaps.aerial')
