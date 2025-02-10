@@ -210,4 +210,10 @@ return {
       require("dbee").setup(--[[optional config]])
     end,
   },
+  -- Todo comments
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 }
