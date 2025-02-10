@@ -1,7 +1,7 @@
 -- NvimTree setup
 require("nvim-tree").setup({
   view = {
-    width = 55,
+    width = 45,
   },
 })
 
