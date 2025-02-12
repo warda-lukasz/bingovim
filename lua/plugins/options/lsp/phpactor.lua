@@ -1,51 +1,68 @@
 local lspconfig = require('lspconfig')
 local default_config = require('plugins.options.lsp.default_config')
 
-local function detectVersion(rootDir)
-  local composer_file = rootDir .. "/composer.json"
-  local f = io.open(composer_file, "r")
-  if f then
-    local content = f:read("*all")
-    f:close()
-    local php_constraint = content:match('"php"%s*:%s*"([^"]+)"')
-    if php_constraint then
-      -- Weź pierwszą konkretną wersję z zakresu (np. z ">=7.4" weźmie "7.4")
-      return php_constraint:match("[%d%.]+")
-    end
-  end
-
-  return "8.3"   -- domyślna wersja
-end
-
 lspconfig.phpactor.setup(vim.tbl_deep_extend("force", default_config, {
-  on_new_config = function(new_config, new_root_dir)
-    new_config.settings = new_config.settings or {}
-    new_config.settings.phpactor = new_config.settings.phpactor or {}
-    new_config.settings.phpactor.php = {
-      version = detectVersion(new_root_dir)
-    }
-  end,
-  settings = {
-    phpactor = {
-      -- Podstawowa konfiguracja phpactora
-      language_server_phpstan = {
-        enabled = true
-      },
-      language_server_psalm = {
-        enabled = false
-      },
-      completion = {
-        enabled = true
-      },
-      indexer = {
-        enabled = true
-      },
-      symfony = {
-        enabled = true
-      },
-      phpunit = {
-        enabled = true
-      },
-    }
+  init_options = {
+    ["symfony.enabled"] = true,
+    ["code_transform.import_globals"] = true,
+    ["phpunit.enabled"] = true,
   }
 }))
+
+-- requires plenary (which is required by telescope)
+local Float = require "plenary.window.float"
+
+vim.cmd([[
+    augroup LspPhpactor
+      autocmd!
+      autocmd Filetype php command! -nargs=0 LspPhpactorReindex lua vim.lsp.buf_notify(0, "phpactor/indexer/reindex",{})
+      autocmd Filetype php command! -nargs=0 LspPhpactorConfig lua LspPhpactorDumpConfig()
+      autocmd Filetype php command! -nargs=0 LspPhpactorStatus lua LspPhpactorStatus()
+      autocmd Filetype php command! -nargs=0 LspPhpactorBlackfireStart lua LspPhpactorBlackfireStart()
+      autocmd Filetype php command! -nargs=0 LspPhpactorBlackfireFinish lua LspPhpactorBlackfireFinish()
+    augroup END
+]])
+
+local function showWindow(title, syntax, contents)
+  local out = {};
+  for match in string.gmatch(contents, "[^\n]+") do
+    table.insert(out, match);
+  end
+
+  local float = Float.percentage_range_window(0.6, 0.4, { winblend = 0 }, {
+    title = title,
+    topleft = "┌",
+    topright = "┐",
+    top = "─",
+    left = "│",
+    right = "│",
+    botleft = "└",
+    botright = "┘",
+    bot = "─",
+  })
+
+  vim.api.nvim_buf_set_option(float.bufnr, "filetype", syntax)
+  vim.api.nvim_buf_set_lines(float.bufnr, 0, -1, false, out)
+end
+
+function LspPhpactorDumpConfig()
+  local results, _ = vim.lsp.buf_request_sync(0, "phpactor/debug/config", { ["return"] = true })
+  for _, res in pairs(results or {}) do
+    pcall(showWindow, 'Phpactor LSP Configuration', 'json', res['result'])
+  end
+end
+
+function LspPhpactorStatus()
+  local results, _ = vim.lsp.buf_request_sync(0, "phpactor/status", { ["return"] = true })
+  for _, res in pairs(results or {}) do
+    pcall(showWindow, 'Phpactor Status', 'markdown', res['result'])
+  end
+end
+
+function LspPhpactorBlackfireStart()
+  local _, _ = vim.lsp.buf_request_sync(0, "blackfire/start", {})
+end
+
+function LspPhpactorBlackfireFinish()
+  local _, _ = vim.lsp.buf_request_sync(0, "blackfire/finish", {})
+end

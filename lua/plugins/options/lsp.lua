@@ -2,6 +2,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "phpactor",               -- PHP
+    "intelephense",
     "cssls",                  -- CSS
     "html",                   -- HTML
     "eslint",                 -- JavaScript, TypeScript linting
@@ -20,7 +21,6 @@ require("mason-lspconfig").setup({
 })
 
 -- Load LSPs configurations
-require("plugins.options.lsp.phpactor")
 require("plugins.options.lsp.luals")
 require("plugins.options.lsp.dockerls")
 require("plugins.options.lsp.yamlls")
@@ -31,3 +31,10 @@ require("plugins.options.lsp.bashls")
 require("plugins.options.lsp.twiggy_language_server")
 require("plugins.options.lsp.ts_ls")
 -- require("plugins.options.lsp.eslint")
+
+
+-- PHP Specific:
+-- Paid:
+require("plugins.options.lsp.intelephense")
+-- Free:
+-- require("plugins.options.lsp.phpactor")
