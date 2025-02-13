@@ -3,19 +3,8 @@ require('aerial').setup({
     default_direction = "right",
     width = 30
   },
-  filter_kind = {
-    "Class",
-    "Constructor",
-    "Function",
-    "Method",
-    "Property",
-    -- Add these for PHP and TypeScript/React support
-    "Variable", -- For PHP properties
-    "Interface",
-    "Constant",
-    "Component", -- For React components
-  },
-
+  -- Display all symbols
+  filter_kind = false,
   -- Add language-specific settings
   typescript = {
     -- Helps with TSX files

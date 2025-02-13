@@ -14,7 +14,7 @@ vim.g.loaded_netrw = 1
 
 -- Configure line numbers and indentation
 vim.opt.number = true          -- Show absolute line numbers
-vim.opt.relativenumber = true  -- Show relative line numbers
+-- vim.opt.relativenumber = true  -- Show relative line numbers
 vim.opt.breakindent = true    -- Preserve indentation in wrapped lines
 
 -- Set system clipboard integration (scheduled to avoid startup issues)
@@ -56,6 +56,8 @@ vim.opt.expandtab = true     -- Convert tabs to spaces
 vim.opt.autoindent = true    -- Copy indent from current line when starting new line
 vim.opt.list = true         -- Show whitespace characters
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }  -- Define whitespace characters
+vim.opt.endofline = true    -- Ensure files end with a newline
+vim.opt.fixendofline = true -- Fix files to end with newline
 
 -- Search settings
 vim.opt.ignorecase = true    -- Ignore case when searching
