@@ -13,9 +13,8 @@ vim.opt.termguicolors = true
 vim.g.loaded_netrw = 1
 
 -- Configure line numbers and indentation
-vim.opt.number = true          -- Show absolute line numbers
--- vim.opt.relativenumber = true  -- Show relative line numbers
-vim.opt.breakindent = true    -- Preserve indentation in wrapped lines
+vim.opt.number = true      -- Show absolute line numbers
+vim.opt.breakindent = true -- Preserve indentation in wrapped lines
 
 -- Set system clipboard integration (scheduled to avoid startup issues)
 vim.schedule(function()
@@ -35,35 +34,35 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Enable persistent undo and smart case-sensitivity
-vim.opt.undofile = true     -- Save undo history to file
-vim.opt.ignorecase = true   -- Case-insensitive searching
-vim.opt.smartcase = true    -- Case-sensitive if search contains capitals
+vim.opt.undofile = true   -- Save undo history to file
+vim.opt.ignorecase = true -- Case-insensitive searching
+vim.opt.smartcase = true  -- Case-sensitive if search contains capitals
 
 -- Configure UI elements and window behavior
-vim.opt.signcolumn = 'yes'    -- Always show sign column
-vim.opt.splitright = true     -- Open vertical splits to the right
-vim.opt.splitbelow = true     -- Open horizontal splits below
+vim.opt.signcolumn = 'yes' -- Always show sign column
+vim.opt.splitright = true  -- Open vertical splits to the right
+vim.opt.splitbelow = true  -- Open horizontal splits below
 
 -- Performance settings
-vim.opt.updatetime = 250      -- Decrease update time for better user experience
-vim.opt.timeoutlen = 300      -- Decrease mapped sequence wait time
+vim.opt.updatetime = 250 -- Decrease update time for better user experience
+vim.opt.timeoutlen = 300 -- Decrease mapped sequence wait time
 
 -- Indentation and whitespace settings
-vim.opt.tabstop = 4          -- Number of spaces a tab counts for
-vim.opt.softtabstop = 4      -- Number of spaces inserted for a tab
-vim.opt.shiftwidth = 4       -- Number of spaces for each indent level
-vim.opt.expandtab = true     -- Convert tabs to spaces
-vim.opt.autoindent = true    -- Copy indent from current line when starting new line
-vim.opt.list = true         -- Show whitespace characters
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }  -- Define whitespace characters
-vim.opt.endofline = true    -- Ensure files end with a newline
+vim.opt.tabstop = 4 -- Number of spaces a tab counts for
+vim.opt.softtabstop = 4 -- Number of spaces inserted for a tab
+vim.opt.shiftwidth = 4 -- Number of spaces for each indent level
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.autoindent = true -- Copy indent from current line when starting new line
+vim.opt.list = true -- Show whitespace characters
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' } -- Define whitespace characters
+vim.opt.endofline = true -- Ensure files end with a newline
 vim.opt.fixendofline = true -- Fix files to end with newline
 
 -- Search settings
-vim.opt.ignorecase = true    -- Ignore case when searching
-vim.opt.smartcase = true     -- Override ignorecase when search includes capitals
-vim.opt.hlsearch = false     -- Don't highlight all search matches
-vim.opt.incsearch = true     -- Show search matches as you type
+vim.opt.ignorecase = true -- Ignore case when searching
+vim.opt.smartcase = true  -- Override ignorecase when search includes capitals
+vim.opt.hlsearch = false  -- Don't highlight all search matches
+vim.opt.incsearch = true  -- Show search matches as you type
 
 -- Scrolling and viewport settings
 vim.opt.sidescrolloff = 8    -- Minimum number of columns to keep visible
@@ -73,7 +72,7 @@ vim.opt.scrolloff = 10       -- Keep 10 lines visible above/below cursor
 
 -- File-specific indentation settings
 vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
-  pattern = { "*.js", "*.html", "*.css", "*.lua", "*.json", "*.ts", "*.tsx" },
+  pattern = { "*.lua", },
   callback = function()
     vim.opt.tabstop = 2
     vim.opt.softtabstop = 2
@@ -103,5 +102,5 @@ require('plugins.options.emoji')         -- Emoji support
 require('plugins.options.lsp')           -- Language Server Protocol settings
 require('plugins.options.nvim-cmp')      -- Completion engine
 require('plugins.options.gitsigns')      -- Git integration
-require('plugins.options.conform')       -- Code formatting
+-- require('plugins.options.conform')       -- Code formatting
 require('plugins.options.todo-comments') -- TODO comment highlighting
