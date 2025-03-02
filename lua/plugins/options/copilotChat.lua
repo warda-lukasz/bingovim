@@ -13,7 +13,7 @@ The user is working on a Linux machine with Mint 22.1 distribution. Please respo
 The user speaks Polish, so please try to respond in Polish if possible, but write code in english.]],
   highlight_headers = false,
   separator = '---',
-  model = 'claude-3.5-sonnet',
+  model = 'claude-3.7-sonnet',
   window = {
     layout = 'float',
     width = 0.7,
@@ -21,6 +21,7 @@ The user speaks Polish, so please try to respond in Polish if possible, but writ
   },
   show_help = false,
   question_header = '# Bingo ',
+  answer_header = '## Bongo ',
 })
 
 -- Registers copilot-chat filetype for markdown rendering

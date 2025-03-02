@@ -14,6 +14,7 @@ vim.g.loaded_netrw = 1
 
 -- Configure line numbers and indentation
 vim.opt.number = true      -- Show absolute line numbers
+vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.breakindent = true -- Preserve indentation in wrapped lines
 
 -- Set system clipboard integration (scheduled to avoid startup issues)
@@ -90,8 +91,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end
 })
 
--- Set the color scheme
-vim.cmd('colorscheme catppuccin-mocha')
+vim.cmd('colorscheme tokyonight')
+
+-- Set window title of tail of root - file name
+vim.opt.title = true
+vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')} - %t"
 
 -- Load plugin-specific configurations
 require('plugins.options.aerial')        -- Outline/symbols viewer
