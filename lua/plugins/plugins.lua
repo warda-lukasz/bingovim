@@ -59,7 +59,7 @@ return {
   {
     "github/copilot.vim",
     config = function()
-      vim.g.copilot_node_command = "~/.nvm/versions/node/v18.20.6/bin/node"
+      vim.g.copilot_node_command = "~/.nvm/versions/node/v18.20.7/bin/node"
     end,
   },
   -- CopilotChat

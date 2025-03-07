@@ -15,6 +15,7 @@ require("mason-lspconfig").setup({
     "lua_ls",                 -- Lua
     "twiggy_language_server", -- Twig
     "ts_ls",                  -- TypeScript
+    "marksman",               -- Markdown
     -- "eslint",                -- TypeScript
   },
   automatic_installation = true,
@@ -30,6 +31,7 @@ require("plugins.options.lsp.cssls")
 require("plugins.options.lsp.bashls")
 require("plugins.options.lsp.twiggy_language_server")
 require("plugins.options.lsp.ts_ls")
+require("plugins.options.lsp.marksman")
 -- require("plugins.options.lsp.eslint")
 
 

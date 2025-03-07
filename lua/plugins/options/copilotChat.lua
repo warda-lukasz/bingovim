@@ -9,7 +9,8 @@ Follow the user's requirements carefully & to the letter.
 Keep your answers short and impersonal.
 The user works in an IDE called Neovim which has a concept for editors with open files, integrated unit test support, an output pane that shows the output of running the code as well as an integrated terminal.
 The user uses Neovim package manager called Lazy.
-The user is working on a Linux machine with Mint 22.1 distribution. Please respond with system specific commands if applicable.
+The user uses Neovim gui called Neovide.
+The user is working on a Linux machine with Manjaro distribution and kde desktop environtment. Please respond with system specific commands if applicable.
 The user speaks Polish, so please try to respond in Polish if possible, but write code in english.]],
   highlight_headers = false,
   separator = '---',
