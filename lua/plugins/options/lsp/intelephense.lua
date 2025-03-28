@@ -1,5 +1,4 @@
 local lspconfig = require("lspconfig")
-
 local function get_php_version_from_composer()
   -- Spróbuj znaleźć composer.json w katalogu projektu
   local composer_path = vim.fn.getcwd() .. "/composer.json"
@@ -28,7 +27,7 @@ local function get_php_version_from_composer()
 end
 
 local function print_php_version()
-  local clients = vim.lsp.get_active_clients({ name = "intelephense" })
+  local clients = vim.lsp.get_clients({ name = "intelephense" })
   for _, client in ipairs(clients) do
     if client.config.settings.intelephense and client.config.settings.intelephense.environment then
       local version = client.config.settings.intelephense.environment.phpVersion
@@ -42,19 +41,28 @@ end
 -- Możesz dodać komendę Vim do wywoływania tej funkcji
 vim.api.nvim_create_user_command("PhpVersion", print_php_version, {})
 
-
 lspconfig.intelephense.setup({
   init_options = {
     licenceKey = vim.env.INTELEPHENSE_LIC_KEY,
   },
   on_init = function(client)
     local php_version = get_php_version_from_composer()
+
     if php_version then
       -- Ustaw wersję PHP w intelephense jeśli została znaleziona
       client.config.settings.intelephense.environment = {
         phpVersion = php_version:gsub("[^%d%.]", "") -- usuń znaki specjalne (^, ~, etc.)
       }
+    else
+      client.config.settings.intelephense.environment = {
+        phpVersion = "8.3"
+      }
     end
+  end,
+  root_dir = function(fname)
+    return lspconfig.util.root_pattern("composer.json", ".git", "index.php")(fname) or
+        vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1]) or
+        vim.fn.getcwd()
   end,
   settings = {
     intelephense = {
@@ -85,7 +93,7 @@ lspconfig.intelephense.setup({
         "judy", "ldap", "leveldb", "libevent", "libsodium", "libxml",
         "lua", "lzf", "mailparse", "mapscript",
         "mbstring", "mcrypt", "memcache", "memcached", "meminfo",
-        "meta", "ming", "mongo", "mongodb", "mosquitto-php",
+        "meta", "ming", "mongo", "mongodb", "mosquito-php",
         "mqseries", "msgpack", "mssql", "mysql", "mysql_xdevapi",
         "mysqli", "ncurses", "newrelic", "oauth", "oci8",
         "odbc", "openssl", "parallel", "Parle", "pcntl", "pcov",
@@ -105,7 +113,7 @@ lspconfig.intelephense.setup({
         "xmlwriter", "xsl", "xxtea", "yaf", "yaml",
         "yar", "zend", "Zend OPcache", "ZendCache",
         "ZendDebugger", "ZendUtils", "zip",
-        "zlib", "zmq", "zookeeper", "symfony"
+        "zlib", "zmq", "zookeeper", "symfony", "phpunit"
       },
     },
   },

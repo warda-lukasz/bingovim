@@ -13,9 +13,9 @@ vim.opt.termguicolors = true
 vim.g.loaded_netrw = 1
 
 -- Configure line numbers and indentation
-vim.opt.number = true      -- Show absolute line numbers
+vim.opt.number = true         -- Show absolute line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
-vim.opt.breakindent = true -- Preserve indentation in wrapped lines
+vim.opt.breakindent = true    -- Preserve indentation in wrapped lines
 
 -- Set system clipboard integration (scheduled to avoid startup issues)
 vim.schedule(function()
@@ -80,6 +80,16 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
     vim.opt.shiftwidth = 2
   end
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
+  pattern = { "*.yml", "*.yaml" },
+  callback = function () 
+    vim.opt.tabstop = 4
+    vim.opt.softtabstop = 4
+    vim.opt.shiftwidth = 4
+  end
+})
+
 
 -- Restore cursor position when reopening files
 vim.api.nvim_create_autocmd("BufReadPost", {
