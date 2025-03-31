@@ -1,3 +1,6 @@
+-- Enable true color support for better visual experience
+vim.opt.termguicolors = true
+
 -- Set leader key to space
 vim.g.mapleader = " "
 -- Setup lazy
@@ -15,12 +18,14 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
--- Load plugins
-
-require("plugins.lsp")
-require("plugins.styles")
--- Load keybindings
-require("keymaps")
 
 -- Load options
 require("options")
+
+-- Load plugins
+require("plugins.lsp")
+require("plugins.styles")
+
+-- Load keybindings
+require("keymaps")
+

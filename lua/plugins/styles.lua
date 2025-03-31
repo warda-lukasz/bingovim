@@ -8,16 +8,5 @@ return {
       style = "night",
     },
   },
-  -- OneDark
-  {
-    "navarasu/onedark.nvim",
-    init = function()
-      require("onedark").setup {
-        style = "darker",
-      }
-      require("onedark").load()
-    end,
-  },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "rebelot/kanagawa.nvim", name="kanagawa"},
+  { "EdenEast/nightfox.nvim" } -- lazy
 }

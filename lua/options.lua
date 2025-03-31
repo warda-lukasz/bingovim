@@ -6,8 +6,6 @@
 -- Enable NERD font for icons and symbols
 vim.g.have_nerd_font = true
 
--- Enable true color support for better visual experience
-vim.opt.termguicolors = true
 
 -- Disable netrw (default file explorer)
 vim.g.loaded_netrw = 1
@@ -83,7 +81,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
   pattern = { "*.yml", "*.yaml" },
-  callback = function () 
+  callback = function() 
     vim.opt.tabstop = 4
     vim.opt.softtabstop = 4
     vim.opt.shiftwidth = 4
@@ -101,7 +99,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end
 })
 
-vim.cmd('colorscheme kanagawa-dragon')
+vim.cmd('colorscheme carbonfox')
 
 -- Set window title of tail of root - file name
 vim.opt.title = true
