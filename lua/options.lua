@@ -101,7 +101,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end
 })
 
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme kanagawa-dragon')
 
 -- Set window title of tail of root - file name
 vim.opt.title = true
@@ -116,5 +116,4 @@ require('plugins.options.emoji')         -- Emoji support
 require('plugins.options.lsp')           -- Language Server Protocol settings
 require('plugins.options.nvim-cmp')      -- Completion engine
 require('plugins.options.gitsigns')      -- Git integration
--- require('plugins.options.conform')       -- Code formatting
 require('plugins.options.todo-comments') -- TODO comment highlighting
