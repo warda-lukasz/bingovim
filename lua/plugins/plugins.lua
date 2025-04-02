@@ -216,4 +216,8 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  }
 }

@@ -81,7 +81,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
   pattern = { "*.yml", "*.yaml" },
-  callback = function() 
+  callback = function()
     vim.opt.tabstop = 4
     vim.opt.softtabstop = 4
     vim.opt.shiftwidth = 4
@@ -115,3 +115,4 @@ require('plugins.options.lsp')           -- Language Server Protocol settings
 require('plugins.options.nvim-cmp')      -- Completion engine
 require('plugins.options.gitsigns')      -- Git integration
 require('plugins.options.todo-comments') -- TODO comment highlighting
+require('plugins.options.lualine')       -- Status line
