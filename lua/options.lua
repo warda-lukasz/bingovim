@@ -99,7 +99,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end
 })
 
-vim.cmd('colorscheme catppuccin-mocha')
+vim.cmd('colorscheme carbonfox')
 
 -- Set window title of tail of root - file name
 vim.opt.title = true
