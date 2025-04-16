@@ -16,8 +16,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 
+
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("plugins")
+local lazy = require("lazy")
+lazy.setup("plugins")
 
 -- Load options
 require("options")
@@ -28,4 +30,8 @@ require("plugins.styles")
 
 -- Load keybindings
 require("keymaps")
+
+
+vim.cmd('MasonUpdate')
+lazy.update()
 
