@@ -5,7 +5,6 @@ local vim = vim
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "intelephense",           -- PHP
     "cssls",                  -- CSS
     "html",                   -- HTML
     "eslint",                 -- JavaScript, TypeScript linting

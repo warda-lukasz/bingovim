@@ -1,3 +1,9 @@
+--NOTE:
+--Tutaj mam osobną konfigurację do Intelephense,
+--należy go zainstalować osobno (nie przez Mason),
+--bo inaczej będzie ładowany podwójnie
+-- npm install intelephense -g
+
 local lspconfig = require("lspconfig")
 local function get_php_version_from_composer()
   -- Spróbuj znaleźć composer.json w katalogu projektu
