@@ -30,8 +30,3 @@ require("plugins.styles")
 
 -- Load keybindings
 require("keymaps")
-
-
-vim.cmd('MasonUpdate')
-lazy.update()
-
