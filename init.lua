@@ -16,6 +16,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 
+vim.g.neovide_opacity = 0.8 -- neovide_transparency
 
 vim.opt.rtp:prepend(lazypath)
 local lazy = require("lazy")

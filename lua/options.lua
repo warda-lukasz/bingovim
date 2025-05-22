@@ -100,6 +100,12 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 vim.cmd('colorscheme carbonfox')
+-- vim.cmd('colorscheme catppuccin')
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' }) -- Set background to none for normal mode
+vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NvimTreeNormalNC', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NvimTreeEndOfBuffer', { bg = 'none' })
 
 -- Set window title of tail of root - file name
 vim.opt.title = true
